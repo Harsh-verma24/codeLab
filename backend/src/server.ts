@@ -28,9 +28,10 @@ const io = new Server(httpServer, {
 })
 
 // Middleware
+const FRONTEND_URL = process.env.CLIENT_URL || "http://localhost:5173"
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || "http://localhost:5173",
+    origin: FRONTEND_URL,
     credentials: true,
   }),
 )
